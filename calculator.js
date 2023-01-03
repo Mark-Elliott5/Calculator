@@ -29,7 +29,14 @@ decimalButton.addEventListener('click', () => {
     if (!(currentValue.textContent.includes('.'))) {
         currentValue.textContent += decimalButton.textContent;
     }
-})
+});
+
+backspaceButton.addEventListener('click', () => {
+    currentValue.textContent = currentValue.textContent.slice(0, -1);
+    if (currentValue.textContent == '') {
+        currentValue.textContent = '0';
+    }
+});
 
 previousValue.textContent = '';
 currentValue.textContent = '0';

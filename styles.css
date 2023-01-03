@@ -13,12 +13,16 @@ body {
     display: grid;
     width: 50%;
     grid-template-areas: 
-    'screen screen'
-    'add subtract'
-    'multiply divide'
-    'exponent squareroot'
-    'pi clear'
-    'ln log10';
+    'screen screen screen screen screen screen'
+    'add add add subtract subtract subtract'
+    'multiply multiply multiply divide divide divide'
+    'exponent exponent exponent squareroot squareroot squareroot'
+    'pi pi pi clear clear clear'
+    'ln ln ln log10 log10 log10'
+    'seven seven eight eight nine nine'
+    'four four five five six six'
+    'one one two two three three'
+    'zero zero decimal decimal plus-minus plus-minus'
 }
 
 .button {
@@ -69,4 +73,52 @@ body {
 
 #log10 {
     grid-area: log10;
+}
+
+#one {
+    grid-area: one;
+}
+
+#two {
+    grid-area: two;
+}
+
+#three {
+    grid-area: three;
+}
+
+#four {
+    grid-area: four;
+}
+
+#five {
+    grid-area: five;
+}
+
+#six {
+    grid-area: six;
+}
+
+#seven {
+    grid-area: seven;
+}
+
+#eight {
+    grid-area: eight;
+}
+
+#nine {
+    grid-area: nine;
+}
+
+#zero {
+    grid-area: zero;
+}
+
+#decimal {
+    grid-area: decimal;
+}
+
+#plus-minus {
+    grid-area: plus-minus;
 }

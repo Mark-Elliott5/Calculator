@@ -1,0 +1,26 @@
+body {
+    background-color: black;
+}
+
+.grid-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons-grid {
+    display: grid;
+    width: 50%;
+    grid-template-areas: 
+    'button button'
+    'button button'
+    'button button'
+    'button button'
+    'button button';
+}
+
+.button {
+    grid-area: 'button';
+    padding: 10px;
+    border: 1px solid white;
+}

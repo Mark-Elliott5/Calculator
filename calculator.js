@@ -38,7 +38,12 @@ backspaceButton.addEventListener('click', () => {
     }
 });
 
-previousValue.textContent = '';
+addButton.addEventListener('click', () => {
+    let sum = parseInt(previousValue.textContent) + parseInt(currentValue.textContent);
+    previousValue.textContent = sum;
+})
+
+previousValue.textContent = 0;
 currentValue.textContent = '0';
 
 addNumberListeners()
@@ -55,6 +60,15 @@ function addNumberListeners() {
         });
     }
 }
+
+// function addOperatorListeners() {
+//     let operators = document.getElementsByClassName('operator');
+//     for (let i = 0; i < operators.length; i++) {
+//         operators[i].addEventListener('click', () => {
+//             previousValue.textContent += parseInt(currentValue.textContent);
+//         })
+//     }
+// }
 
 // previousValue.textContent = currentValue.textContent; for operator listeners
 

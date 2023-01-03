@@ -23,4 +23,5 @@ body {
     grid-area: 'button';
     padding: 10px;
     border: 1px solid white;
+    color: white;
 }

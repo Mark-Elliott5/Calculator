@@ -13,6 +13,7 @@ body {
     display: grid;
     width: 50%;
     grid-template-areas: 
+    'previous-screen previous-screen previous-screen previous-screen'
     'screen screen screen screen'
     'exponent squareroot backspace equals'
     'ln log10 pi clear'
@@ -28,6 +29,10 @@ body {
     padding: 10px;
     border: 1px solid white;
     text-align: center;
+}
+
+#previous-value-screen {
+    grid-area: previous-screen;
 }
 
 #screen {

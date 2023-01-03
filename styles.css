@@ -13,21 +13,21 @@ body {
     display: grid;
     width: 50%;
     grid-template-areas: 
-    'screen screen screen screen screen screen'
-    'add add add subtract subtract subtract'
-    'multiply multiply multiply divide divide divide'
-    'exponent exponent exponent squareroot squareroot squareroot'
-    'pi pi pi clear clear clear'
-    'ln ln ln log10 log10 log10'
-    'seven seven eight eight nine nine'
-    'four four five five six six'
-    'one one two two three three'
-    'zero zero decimal decimal plus-minus plus-minus'
+    'screen screen screen screen'
+    'exponent squareroot backspace equals'
+    'ln log10 pi clear'
+    'seven eight nine add'
+    'four five six subtract'
+    'one two three multiply'
+    'zero decimal plus-minus divide';
 }
+
+
 
 .button {
     padding: 10px;
     border: 1px solid white;
+    text-align: center;
 }
 
 #screen {
@@ -121,4 +121,12 @@ body {
 
 #plus-minus {
     grid-area: plus-minus;
+}
+
+#equals {
+    grid-area: equals;
+}
+
+#backspace {
+    grid-area: backspace;
 }

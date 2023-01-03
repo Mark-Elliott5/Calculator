@@ -1,8 +1,9 @@
 body {
     background-color: black;
+    color: white;
 }
 
-.grid-flex {
+.calculator-flex {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,16 +13,60 @@ body {
     display: grid;
     width: 50%;
     grid-template-areas: 
-    'button button'
-    'button button'
-    'button button'
-    'button button'
-    'button button';
+    'screen screen'
+    'add subtract'
+    'multiply divide'
+    'exponent squareroot'
+    'pi clear'
+    'ln log10';
 }
 
 .button {
-    grid-area: 'button';
     padding: 10px;
     border: 1px solid white;
-    color: white;
+}
+
+#screen {
+    grid-area: screen;
+    text-align: right;
+}
+
+#add {
+    grid-area: add;
+}
+
+#subtract {
+    grid-area: subtract;
+}
+
+#multiply {
+    grid-area: multiply;
+}
+
+#divide {
+    grid-area: divide;
+}
+
+#exponent {
+    grid-area: exponent;
+}
+
+#squareroot {
+    grid-area: squareroot;
+}
+
+#pi {
+    grid-area: pi;
+}
+
+#clear {
+    grid-area: clear;
+}
+
+#ln {
+    grid-area: ln;
+}
+
+#log10 {
+    grid-area: log10;
 }

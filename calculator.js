@@ -25,6 +25,12 @@ const decimalButton = document.getElementById('decimal');
 const plusminusButton = document.getElementById('plus-minus');
 const equalsButton = document.getElementById('equals');
 
+decimalButton.addEventListener('click', () => {
+    if (!(currentValue.textContent.includes('.'))) {
+        currentValue.textContent += decimalButton.textContent;
+    }
+})
+
 previousValue.textContent = '';
 currentValue.textContent = '0';
 

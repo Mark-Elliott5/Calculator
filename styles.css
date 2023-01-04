@@ -33,6 +33,7 @@ body {
 
 #previous-value-screen {
     grid-area: previous-screen;
+    text-align: right;
 }
 
 #screen {

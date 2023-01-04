@@ -25,6 +25,11 @@ const decimalButton = document.getElementById('decimal');
 const plusminusButton = document.getElementById('plus-minus');
 const equalsButton = document.getElementById('equals');
 
+clearButton.addEventListener('click', () => {
+    currentValue.textContent = '0';
+    previousValue.textContent = 0;
+})
+
 decimalButton.addEventListener('click', () => {
     if (!(currentValue.textContent.includes('.'))) {
         currentValue.textContent += decimalButton.textContent;
@@ -42,6 +47,16 @@ addButton.addEventListener('click', () => {
     let sum = parseInt(previousValue.textContent) + parseInt(currentValue.textContent);
     previousValue.textContent = sum;
 })
+
+equalsButton.addEventListener('click', () => {
+    let value = parseInt(previousValue.textContent) + parseInt(currentValue.textContent);
+    previousValue.textContent = sum;
+})
+
+let currentOperator = '';
+let storedValue = 0;
+
+let operatorHit = false;
 
 previousValue.textContent = 0;
 currentValue.textContent = '0';

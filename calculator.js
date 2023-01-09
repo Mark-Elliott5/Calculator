@@ -1,15 +1,46 @@
-const currentValue = document.getElementById('screen');
-let previousValue = 0
-let currentOperator = ''
+const buttons = document.getElementById('buttonsgrid');
+const screen = document.getElementById('screen');
+const previousScreen = document.getElementById('previous-value-screen');
+let currentOperator = '';
+let operatorJustHit = false;
 
-const buttons = document.addEventListener('click', (e) => {
-    const input = e.target;
+const threeButton = document.getElementById('three');
 
-    if ((input.dataset.type === 'number') && (currentOperator === '')) {
-        if (currentValue.textContent === '0') {
-            currentValue.textContent = input.textContent;
+
+buttons.addEventListener('click', (event) => {
+    let currentValue = screen.textContent;
+    let previousValue = previousScreen.textContent;
+    let currentOperator = '';
+    let operatorJustHit = false;
+
+    if ((event.target.dataset.type == 'number')) {
+        if (screen.textContent.length < 9) {
+            if (currentValue === '0') {
+                screen.textContent = event.target.value;
+                return;
+            } else {
+                screen.textContent += event.target.value;
+                return;
+            }
         } else {
-            currentValue.textContent += input.textContent;
+            return;
         }
+        
     }
 })
+
+function operate(operator) {
+    if (operator == '+') {
+        let result = previousValue + currentValue;
+        previousValue, currentValue = result;
+    } if (operator == '-') {
+        let result = previousValue - currentValue;
+        previousValue, currentValue = result;
+    } if (operator == '/') {
+        let result = previousValue / currentValue;
+        previousValue, currentValue = result;
+    } if (operator == '*') {
+        let result = previousValue + currentValue;
+        previousValue, currentValue = result;
+    }
+}

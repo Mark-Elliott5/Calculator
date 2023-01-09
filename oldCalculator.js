@@ -98,6 +98,31 @@ function addNumberListeners() {
     }
 }
 
+
+// buttons.addEventListener('click', function(e) {
+//     // const input = e.target;
+//     // let currentValue = parseInt(currentValue);
+//     // let previousValue = parseInt(previousScreenValue);
+
+//     if ((e.target.dataset.type == 'number') && (!currentOperator)) {
+//         if (currentValue == '0') {
+//             currentValue = e.target.textContent;
+//         } else {
+//             currentValue += e.target.textContent;
+//         }
+//     } if ((input.dataset.type == 'number') && (currentOperator)) {
+//         if (
+//     }
+
+
+//     if ((input.dataset.type == 'operator')) {
+//         operatorJustHit = true;
+//         if (!previousValue == 0) {
+//             operate(input.textContent)
+//         }
+//     } 
+// })
+
 // function addOperatorListeners() {
 //     let operators = document.getElementsByClassName('operator');
 //     for (let i = 0; i < operators.length; i++) {
@@ -110,58 +135,58 @@ function addNumberListeners() {
 // previousValue.textContent = currentValue.textContent; for operator listeners
 
 
-function addition(existingNumber, input) {
-    let result = existingNumber + input;
-    console.log(result);
-    calculatorDisplay.innerText = result;
-}
+// function addition(existingNumber, input) {
+//     let result = existingNumber + input;
+//     console.log(result);
+//     calculatorDisplay.innerText = result;
+// }
 
-function subtraction(existingNumber, input) {
-    let result = existingNumber - input;
-    console.log(result);
-    calculatorDisplay.innerText = result;
-}
+// function subtraction(existingNumber, input) {
+//     let result = existingNumber - input;
+//     console.log(result);
+//     calculatorDisplay.innerText = result;
+// }
 
-function multiplication(existingNumber, input) {
-    let result = existingNumber * input;
-    console.log(result);
-    calculatorDisplay.innerText = result;
-}
+// function multiplication(existingNumber, input) {
+//     let result = existingNumber * input;
+//     console.log(result);
+//     calculatorDisplay.innerText = result;
+// }
 
-function division(existingNumber, input) {
-    let result = existingNumber / input;
-    console.log(result);
-    calculatorDisplay.innerText = result;
-}
+// function division(existingNumber, input) {
+//     let result = existingNumber / input;
+//     console.log(result);
+//     calculatorDisplay.innerText = result;
+// }
 
-function exponentiation(existingNumber, input) {
-    let result = existingNumber ** input;
-    console.log(result);
-    calculatorDisplay.innerText = result;
-}
+// function exponentiation(existingNumber, input) {
+//     let result = existingNumber ** input;
+//     console.log(result);
+//     calculatorDisplay.innerText = result;
+// }
 
-function squareRoot(existingNumber) {
-    let result = Math.sqrt(existingNumber);
-    console.log(result);
-    calculatorDisplay.innerText = result;
-}
+// function squareRoot(existingNumber) {
+//     let result = Math.sqrt(existingNumber);
+//     console.log(result);
+//     calculatorDisplay.innerText = result;
+// }
 
-function pi() {
-    let input = 3.14;
-}
+// function pi() {
+//     let input = 3.14;
+// }
 
-function clear() {
-    existingNumber = 0;
-}
+// function clear() {
+//     existingNumber = 0;
+// }
 
-function log(existingNumber) {
-    let result = Math.log(existingNumber)/Math.LN10;
-    console.log(result);
-    calculatorDisplay.innerText = result;
-}
+// function log(existingNumber) {
+//     let result = Math.log(existingNumber)/Math.LN10;
+//     console.log(result);
+//     calculatorDisplay.innerText = result;
+// }
 
-function naturalLog(existingNumber) {
-    let result = Math.log(existingNumber);
-    console.log(result);
-    calculatorDisplay.innerText = result;
-}
+// function naturalLog(existingNumber) {
+//     let result = Math.log(existingNumber);
+//     console.log(result);
+//     calculatorDisplay.innerText = result;
+// }

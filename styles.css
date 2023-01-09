@@ -9,11 +9,11 @@ body {
     align-items: center;
 }
 
-.buttons-grid {
+#buttons-grid {
     display: grid;
     width: 50%;
     grid-template-areas: 
-    'previous-screen previous-screen previous-screen previous-screen'
+    'previous-value-screen previous-value-screen previous-value-screen previous-value-screen'
     'screen screen screen screen'
     'exponent squareroot backspace equals'
     'ln log10 pi clear'
@@ -23,8 +23,6 @@ body {
     'zero decimal plus-minus divide';
 }
 
-
-
 .button {
     padding: 10px;
     border: 1px solid white;
@@ -32,7 +30,7 @@ body {
 }
 
 #previous-value-screen {
-    grid-area: previous-screen;
+    grid-area: previous-value-screen;
     text-align: right;
 }
 

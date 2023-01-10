@@ -28,7 +28,6 @@ buttons.addEventListener('click', (event) => {
             previousScreen.textContent = screen.textContent;
             screen.textContent = 0;
             operatorJustHit = false;    
-            // currentValue = operate(previousValue, currentValue, operator);
             screen.textContent = event.target.value;
             return;
         }
@@ -71,6 +70,16 @@ buttons.addEventListener('click', (event) => {
         return;
     }
 
+    if (event.target.id === 'plus-minus') {
+        if (!(screen.textContent.includes('-'))) {
+            screen.textContent = '-' + screen.textContent;
+            return;
+        } if (screen.textContent.includes('-')) {
+            screen.textContent = screen.textContent.slice(1);
+            return;
+        }
+    }
+
     if (event.target.id === 'log10') {
         screen.textContent = Math.log(currentValue)/Math.LN10;
         return;
@@ -84,6 +93,10 @@ buttons.addEventListener('click', (event) => {
     if (event.target.id === 'squareroot') {
         screen.textContent = Math.sqrt(screen.textContent);
         return;
+    }
+
+    if (event.target.id === 'pi') {
+        screen.textContent = Math.PI;
     }
 
     if (event.target.id === 'equals') {

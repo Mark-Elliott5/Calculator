@@ -10,15 +10,17 @@ const threeButton = document.getElementById('three');
 buttons.addEventListener('click', (event) => {
     let currentValue = screen.textContent;
     let previousValue = previousScreen.textContent;
+    const input = event.target.value;
+    const type = event.target.dataset.type;
 
-    if ((event.target.dataset.type == 'number')) {
+    if ((type == 'number')) {
         if (!operatorJustHit) {
             if (screen.textContent.length < 9) {
                 if (currentValue === '0') {
-                    screen.textContent = event.target.value;
+                    screen.textContent = input;
                     return;
                 } else {
-                    screen.textContent += event.target.value;
+                    screen.textContent += input;
                     return;
                 }
             } else {
@@ -28,7 +30,7 @@ buttons.addEventListener('click', (event) => {
             previousScreen.textContent = screen.textContent;
             screen.textContent = 0;
             operatorJustHit = false;    
-            screen.textContent = event.target.value;
+            screen.textContent = input;
             return;
         }
     }
@@ -48,14 +50,14 @@ buttons.addEventListener('click', (event) => {
         return;
     }
 
-    if (event.target.dataset.type === 'operator') {
+    if (type === 'operator') {
         if (currentOperator) {
             screen.textContent  = operate(previousValue, screen.textContent, currentOperator);
-            currentOperator = event.target.value;
+            currentOperator = input;
             operatorJustHit = true;
             return;
         } else if (!currentOperator) {
-            currentOperator = event.target.value;
+            currentOperator = input;
             operatorJustHit = true;
             previousScreen.textContent = currentValue;
             return;

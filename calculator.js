@@ -34,6 +34,13 @@ buttons.addEventListener('click', (event) => {
         }
     }
 
+    if (event.target.id === 'decimal') {
+        if (!(currentValue.includes('.'))) {
+            screen.textContent += '.';
+            return;
+        }
+    }
+
     if (event.target.id === 'clear') {
         screen.textContent = 0;
         previousScreen.textContent = 0;
@@ -64,6 +71,16 @@ buttons.addEventListener('click', (event) => {
         return;
     }
 
+    if (event.target.id === 'log10') {
+        screen.textContent = Math.log(currentValue)/Math.LN10;
+        return;
+    }
+
+    if (event.target.id == 'ln') {
+        screen.textContent = Math.log(currentValue);
+        return;
+    }
+
     if (event.target.id === 'squareroot') {
         screen.textContent = Math.sqrt(screen.textContent);
         return;
@@ -84,12 +101,12 @@ function operate(previousValue, currentValue, operator) {
     if (operator === '') {
         return;
     } if (operator === '+') {
-        return parseInt(previousValue) + parseInt(currentValue);
+        return parseFloat(previousValue) + parseFloat(currentValue);
     } if (operator === '-') {
-        return parseInt(previousValue) - parseInt(currentValue);
+        return parseFloat(previousValue) - parseFloat(currentValue);
     } if (operator === '/') {
-        return parseInt(previousValue) / parseInt(currentValue);
+        return parseFloat(previousValue) / parseFloat(currentValue);
     } if (operator === '*') {
-        return parseInt(previousValue) * parseInt(currentValue);
+        return parseFloat(previousValue) * parseFloat(currentValue);
     }
 }

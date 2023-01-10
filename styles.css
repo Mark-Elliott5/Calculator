@@ -53,6 +53,7 @@ body {
 
 #divide {
     grid-area: divide;
+    font-size: larger;
 }
 
 #exponent {

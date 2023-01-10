@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: rgb(54, 54, 54);
     color: white;
 }
 
@@ -7,6 +7,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
 }
 
 #buttons-grid {
@@ -15,18 +17,48 @@ body {
     grid-template-areas: 
     'previous-value-screen previous-value-screen previous-value-screen previous-value-screen'
     'screen screen screen screen'
-    'exponent squareroot backspace equals'
-    'ln log10 pi clear'
+    'exponent squareroot pi equals'
+    'ln log10 backspace clear'
     'seven eight nine add'
     'four five six subtract'
     'one two three multiply'
     'zero decimal plus-minus divide';
+    gap: 0.15rem;
+    border: 1rem solid rgb(176, 176, 176);
+    background-color: rgb(155, 154, 154);
+}
+
+.display {
+    background-color: rgb(172, 187, 168);
+    color: black;
 }
 
 .button {
-    padding: 10px;
+    padding: 20px;
     border: 1px solid white;
     text-align: center;
+    font-size: larger;
+}
+
+.button:active {
+    transform: translateY(1px);
+}
+
+.button.number {
+    color: darkblue;
+    background-color: white;
+}
+
+.button.operator {
+    color: white;
+    background-color: darkblue;
+    border: darkblue;
+}
+
+.button.special {
+    color: white;
+    background-color: rgb(25, 150, 25);
+    border: rgb(25, 150, 25);
 }
 
 #previous-value-screen {

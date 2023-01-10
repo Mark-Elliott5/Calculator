@@ -10,17 +10,19 @@
 <body>
     <div class="calculator-flex">
         <div id="buttons-grid">
-            <div class="display" id="previous-value-screen">0</div>
-            <div class="display" id="screen">0</div>
+            <div class="display">
+                <span id="previous-value-screen">0</span>
+                <span id="screen">0</span>
+            </div>
             <button class="button operator" id="add" data-type="operator" value="+">+</button>
             <button class="button operator" id="subtract" data-type="operator" value="-">-</button>
-            <button class="button operator" id="multiply" data-type="operator" value="*">x</button>
+            <button class="button operator" id="multiply" data-type="operator" value="*">×</button>
             <button class="button operator" id="divide" data-type="operator" value="/">÷</button>
             <button class="button special" id="exponent" data-type="operator" value="exponent">x<sup>y</sup></button>
             <button class="button special" id="squareroot">√</button>
             <button class="button special" id="pi">π</button>
             <button class="button special" id="clear">Clear</button>
-            <button class="button special" id="backspace">BKSP</button>
+            <button class="button special" id="backspace">Del</button>
             <button class="button special" id="ln">ln(x)</button>
             <button class="button special" id="log10">log(x)</button>
             <button class="button number" id="seven" data-type="number" value="7">7</button>
@@ -38,6 +40,8 @@
             <button class="button special" id="equals" data-type="equals">=</button>
         </div>
     </div>
+
+    <footer>Designed by Mark Elliott <a href="https://github.com/Mark-Elliott5"><img class="github-link" src="github-mark-white.png"></a></footer>
 
     <script src="calculator.js"></script>
 </body>

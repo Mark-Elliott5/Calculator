@@ -121,7 +121,11 @@ function operate(previousValue, currentValue, operator) {
     } if (operator === '-') {
         return parseFloat(previousValue) - parseFloat(currentValue);
     } if (operator === '/') {
+        if (currentValue == 0) {
+            return 'Universe Deleted';
+        } else {
         return parseFloat(previousValue) / parseFloat(currentValue);
+        }
     } if (operator === '*') {
         return parseFloat(previousValue) * parseFloat(currentValue);
     } if (operator === 'exponent') {

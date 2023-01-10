@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Nanum+Gothic&display=swap');
+
 body {
     background-color: rgb(54, 54, 54);
     color: white;
     overflow: hidden;
+    font-family: JetBrains Mono;
 }
 
 footer {

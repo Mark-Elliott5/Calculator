@@ -66,8 +66,9 @@ buttons.addEventListener('click', (event) => {
         screen.textContent = screen.textContent.slice(0, -1);
         if (screen.textContent == '') {
             screen.textContent = 0;
-        }
-        return;
+        } if (screen.textContent[screen.textContent.length-1] === '.') {
+            screen.textContent = screen.textContent.slice(0, -1);
+        } return;
     }
 
     if (event.target.id === 'plus-minus') {

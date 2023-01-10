@@ -31,6 +31,8 @@ body {
 .display {
     background-color: rgb(172, 187, 168);
     color: black;
+    padding: 15px;
+    font-size: larger;
 }
 
 .button {

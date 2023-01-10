@@ -121,5 +121,7 @@ function operate(previousValue, currentValue, operator) {
         return parseFloat(previousValue) / parseFloat(currentValue);
     } if (operator === '*') {
         return parseFloat(previousValue) * parseFloat(currentValue);
+    } if (operator === 'exponent') {
+        return parseFloat(previousValue) ** parseFloat(currentValue);
     }
 }

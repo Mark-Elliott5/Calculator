@@ -11,7 +11,7 @@ buttons.addEventListener('click', (event) => {
     const type = event.target.dataset.type;
     const id = event.target.id;
 
-    if ((type == 'number')) {
+    if ((type === 'number')) {
         if (!operatorJustHit) {
             if (screen.textContent.length < 9) {
                 if (currentValue === '0') {
@@ -88,7 +88,7 @@ buttons.addEventListener('click', (event) => {
         return;
     }
 
-    if (id == 'ln') {
+    if (id === 'ln') {
         screen.textContent = Math.log(currentValue);
         return;
     }

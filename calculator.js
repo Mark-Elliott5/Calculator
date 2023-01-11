@@ -4,14 +4,12 @@ const previousScreen = document.getElementById('previous-value-screen');
 let currentOperator = '';
 let operatorJustHit = false;
 
-const threeButton = document.getElementById('three');
-
-
 buttons.addEventListener('click', (event) => {
     let currentValue = screen.textContent;
     let previousValue = previousScreen.textContent;
     const input = event.target.value;
     const type = event.target.dataset.type;
+    const id = event.target.id;
 
     if ((type == 'number')) {
         if (!operatorJustHit) {
@@ -35,14 +33,14 @@ buttons.addEventListener('click', (event) => {
         }
     }
 
-    if (event.target.id === 'decimal') {
+    if (id === 'decimal') {
         if (!(currentValue.includes('.'))) {
             screen.textContent += '.';
             return;
         }
     }
 
-    if (event.target.id === 'clear') {
+    if (id === 'clear') {
         screen.textContent = 0;
         previousScreen.textContent = 0;
         operatorJustHit = false;
@@ -64,7 +62,7 @@ buttons.addEventListener('click', (event) => {
         }
     }
 
-    if (event.target.id === 'backspace') {
+    if (id === 'backspace') {
         screen.textContent = screen.textContent.slice(0, -1);
         if (screen.textContent == '') {
             screen.textContent = 0;
@@ -73,7 +71,7 @@ buttons.addEventListener('click', (event) => {
         } return;
     }
 
-    if (event.target.id === 'plus-minus') {
+    if (id === 'plus-minus') {
         if (screen.textContent === '0') {
             return;
         } if (!(screen.textContent.includes('-'))) {
@@ -85,26 +83,26 @@ buttons.addEventListener('click', (event) => {
         }
     }
 
-    if (event.target.id === 'log10') {
+    if (id === 'log10') {
         screen.textContent = Math.log(currentValue)/Math.LN10;
         return;
     }
 
-    if (event.target.id == 'ln') {
+    if (id == 'ln') {
         screen.textContent = Math.log(currentValue);
         return;
     }
 
-    if (event.target.id === 'squareroot') {
+    if (id === 'squareroot') {
         screen.textContent = Math.sqrt(screen.textContent);
         return;
     }
 
-    if (event.target.id === 'pi') {
+    if (id === 'pi') {
         screen.textContent = Math.PI;
     }
 
-    if (event.target.id === 'equals') {
+    if (id === 'equals') {
         if (currentOperator == '') {
             return;
         }

@@ -5,6 +5,7 @@ body {
     color: white;
     overflow: hidden;
     font-family: JetBrains Mono;
+    margin: 0;
 }
 
 footer {

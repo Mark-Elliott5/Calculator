@@ -42,8 +42,9 @@ footer {
     'one two three multiply'
     'zero decimal plus-minus divide';
     gap: 0.15rem;
-    border: 1rem solid rgb(176, 176, 176);
-    background-color: rgb(155, 154, 154);
+    padding: 16px;
+    background: linear-gradient(90deg, #b0b0b0, #cfcfcf);
+    border-radius: 2px;
 }
 
 .display {
@@ -51,20 +52,20 @@ footer {
     flex-direction: column;
     grid-area: display;
     text-align: right;
-    background-color: rgb(155, 170, 150);
+    background: linear-gradient(-90deg, #94c586, #88aa7e);
     color: black;
     padding: 15px;
     border: 1px solid grey;
     gap: 0.6rem;
+    border-radius: 2px;
 }
 
 .button {
-    padding: 20px;
-    border: 1px solid white;
-    text-align: center;
+    border: 0px;
     font-size: larger;
     width: 5rem;
     height: 4rem;
+    border-radius: 2px;
 }
 
 .button:active {
@@ -78,15 +79,24 @@ footer {
 
 .button.operator {
     color: white;
-    background-color: darkblue;
-    border: darkblue;
+    background: radial-gradient(darkblue 10%, #000093 60%);
     font-size: 2rem;
 }
 
 .button.special {
     color: white;
-    background-color: rgb(25, 150, 25);
-    border: rgb(25, 150, 25);
+    background: radial-gradient(#018e01 10%, #009500 60%);
+}
+
+.button.special, .button.operator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+svg {
+    width: 25px;
+    fill: white;
 }
 
 #previous-value-screen {

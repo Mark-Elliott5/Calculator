@@ -16,13 +16,27 @@
                 <span id="previous-value-screen">0</span>
                 <span id="screen">0</span>
             </div>
-            <button class="button operator" id="add" data-type="operator" value="+">+</button>
-            <button class="button operator" id="subtract" data-type="operator" value="-">-</button>
-            <button class="button operator" id="multiply" data-type="operator" value="*">×</button>
-            <button class="button operator" id="divide" data-type="operator" value="/">÷</button>
-            <button class="button special" id="exponent" data-type="operator" value="exponent">x<sup>y</sup></button>
-            <button class="button special" id="squareroot">√</button>
-            <button class="button special" id="pi">π</button>
+            <button class="button operator" id="add" data-type="operator" value="+">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
+            </button>
+            <button class="button operator" id="subtract" data-type="operator" value="-">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>minus</title><path d="M19,13H5V11H19V13Z" /></svg>
+            </button>
+            <button class="button operator" id="multiply" data-type="operator" value="*">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>multiply</title><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+            </button>
+            <button class="button operator" id="divide" data-type="operator" value="/">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>division</title><path d="M19,13H5V11H19V13M12,5A2,2 0 0,1 14,7A2,2 0 0,1 12,9A2,2 0 0,1 10,7A2,2 0 0,1 12,5M12,15A2,2 0 0,1 14,17A2,2 0 0,1 12,19A2,2 0 0,1 10,17A2,2 0 0,1 12,15Z" /></svg>
+            </button>
+            <button class="button special" id="exponent" data-type="operator" value="exponent">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>exponent</title><path d="M15.38,3L17.77,8.75C17.55,9.68 17.27,10.32 17,10.7C16.67,11.18 16.44,11.25 16.19,11.25V12.75C16.94,12.75 17.74,12.35 18.24,11.56C19.87,8.94 22,3 22,3H20.38L18.69,7.05L17,3H15.38M3.42,8.59L2,10L6.79,14.79L2,19.59L3.41,21L8.21,16.21L13,21L14.41,19.59L9.62,14.79L14.41,10L13,8.59L8.21,13.38L3.41,8.59H3.42Z" /></svg>
+            </button>
+            <button class="button special" id="squareroot">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>square-root</title><path d="M11.76,16.83L14.59,14L11.76,11.17L13.17,9.76L16,12.59L18.83,9.76L20.24,11.17L17.41,14L20.24,16.83L18.83,18.24L16,15.41L13.17,18.24L11.76,16.83M2,11H5V11H5L7.29,16.4L10,6H22V8H11.55L8.68,19H6.22L3.68,13H2V11Z" /></svg>
+            </button>
+            <button class="button special" id="pi">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pi</title><path d="M4,5V7H6V19H8V7H14V16A3,3 0 0,0 17,19A3,3 0 0,0 20,16H18A1,1 0 0,1 17,17A1,1 0 0,1 16,16V7H18V5" /></svg>
+            </button>
             <button class="button special" id="clear">Clear</button>
             <button class="button special" id="backspace">Del</button>
             <button class="button special" id="ln">ln(x)</button>
@@ -39,7 +53,9 @@
             <button class="button number" id="zero" data-type="number" value="0">0</button>
             <button class="button number" id="decimal" data-type="decimal">.</button>
             <button class="button number" id="plus-minus">-/+</button>
-            <button class="button special" id="equals" data-type="equals">=</button>
+            <button class="button special" id="equals" data-type="equals">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>equal</title><path d="M19,10H5V8H19V10M19,16H5V14H19V16Z" /></svg>
+            </button>
         </div>
     </div>
 

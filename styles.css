@@ -13,13 +13,13 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
     color: white;
     text-align: center;
 }
 
 .github-link {
-    width: 1rem;
+    width: 16px;
     margin-left: 5px;
 }
 
@@ -41,7 +41,7 @@ footer {
     'four five six subtract'
     'one two three multiply'
     'zero decimal plus-minus divide';
-    gap: 0.15rem;
+    gap: 3px;
     padding: 16px;
     background: linear-gradient(90deg, #b0b0b0, #cfcfcf);
     border-radius: 2px;
@@ -56,15 +56,15 @@ footer {
     color: black;
     padding: 15px;
     border: 1px solid grey;
-    gap: 0.6rem;
+    gap: 10px;
     border-radius: 2px;
 }
 
 .button {
     border: 0px;
     font-size: larger;
-    width: 5rem;
-    height: 4rem;
+    width: 80px;
+    height: 64px;
     border-radius: 2px;
 }
 
@@ -80,7 +80,6 @@ footer {
 .button.operator {
     color: white;
     background: radial-gradient(darkblue 10%, #000093 60%);
-    font-size: 2rem;
 }
 
 .button.special {
@@ -92,6 +91,10 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.button.number {
+    font-family: inherit;
 }
 
 svg {

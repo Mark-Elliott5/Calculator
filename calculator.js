@@ -13,7 +13,7 @@ buttons.addEventListener('click', (event) => {
 
     if (type === 'number') {
         if (!operatorJustHit) {
-            if (screen.textContent.length < 9) {
+            if (currentValue.length < 9) {
                 if (currentValue === '0') {
                     screen.textContent = input;
                     return;
@@ -64,20 +64,20 @@ buttons.addEventListener('click', (event) => {
 
     if (id === 'backspace') {
         screen.textContent = screen.textContent.slice(0, -1);
-        if (screen.textContent == '') {
+        if (currentValue == '') {
             screen.textContent = 0;
-        } if (screen.textContent[screen.textContent.length-1] === '.') {
+        } if (currentValue[currentValue.length-1] === '.') {
             screen.textContent = screen.textContent.slice(0, -1);
         } return;
     }
 
     if (id === 'plus-minus') {
-        if (screen.textContent === '0') {
+        if (currentValue === '0') {
             return;
-        } if (!(screen.textContent.includes('-'))) {
+        } if (!(currentValue.includes('-'))) {
             screen.textContent = '-' + screen.textContent;
             return;
-        } if (screen.textContent.includes('-')) {
+        } else {
             screen.textContent = screen.textContent.slice(1);
             return;
         }

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Nanum+Gothic&display=swap');
 
 body {
-    background-color: rgb(54, 54, 54);
+    background: linear-gradient(0deg, #1f1f1f, #3d3d3d);
     color: white;
     overflow: hidden;
     font-family: JetBrains Mono;
@@ -45,6 +45,7 @@ footer {
     padding: 16px;
     background: linear-gradient(90deg, #b0b0b0, #cfcfcf);
     border-radius: 2px;
+    box-shadow: 0 0 25px 10px #0000006e;
 }
 
 .display {

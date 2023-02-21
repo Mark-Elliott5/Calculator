@@ -64,7 +64,7 @@ buttons.addEventListener('click', (event) => {
 
     if (id === 'backspace') {
         screen.textContent = screen.textContent.slice(0, -1);
-        if (currentValue == '') {
+        if (screen.textContent == '') {
             screen.textContent = 0;
         } if (currentValue[currentValue.length-1] === '.') {
             screen.textContent = screen.textContent.slice(0, -1);

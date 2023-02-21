@@ -5,113 +5,152 @@ let currentOperator = '';
 let operatorJustHit = false;
 
 buttons.addEventListener('click', (event) => {
-    let currentValue = screen.textContent;
-    let previousValue = previousScreen.textContent;
+    const currentValue = screen.textContent;
+    const previousValue = previousScreen.textContent;
     const input = event.target.value;
     const type = event.target.dataset.type;
     const id = event.target.id;
 
     if (type === 'number') {
-        if (!operatorJustHit) {
-            if (currentValue.length < 9) {
-                if (currentValue === '0') {
-                    screen.textContent = input;
-                    return;
-                } else {
-                    screen.textContent += input;
-                    return;
-                }
-            } else {
-                return;
-            }
-        } else if (operatorJustHit) {
-            previousScreen.textContent = screen.textContent;
-            screen.textContent = 0;
-            operatorJustHit = false;    
-            screen.textContent = input;
-            return;
-        }
+        handleNumber(input, currentValue);
     }
 
     if (id === 'decimal') {
-        if (!(currentValue.includes('.'))) {
-            screen.textContent += '.';
-            return;
-        }
+        addDecimal();
+        return;
     }
 
     if (id === 'clear') {
-        screen.textContent = 0;
-        previousScreen.textContent = 0;
-        operatorJustHit = false;
-        currentOperator = '';
+        clearScreen();
         return;
     }
 
     if (type === 'operator') {
-        if (currentOperator) {
-            screen.textContent  = operate(previousValue, screen.textContent, currentOperator);
-            currentOperator = input;
-            operatorJustHit = true;
-            return;
-        } else if (!currentOperator) {
-            currentOperator = input;
-            operatorJustHit = true;
-            previousScreen.textContent = currentValue;
-            return;
-        }
+        changeOperator(input, previousValue, currentValue);
+        return;
     }
 
     if (id === 'backspace') {
-        screen.textContent = screen.textContent.slice(0, -1);
-        if (currentValue == '') {
-            screen.textContent = 0;
-        } if (currentValue[currentValue.length-1] === '.') {
-            screen.textContent = screen.textContent.slice(0, -1);
-        } return;
+        deleteCharacter(currentValue);
+        return;
     }
 
     if (id === 'plus-minus') {
-        if (currentValue === '0') {
-            return;
-        } if (!(currentValue.includes('-'))) {
-            screen.textContent = '-' + screen.textContent;
-            return;
-        } else {
-            screen.textContent = screen.textContent.slice(1);
-            return;
-        }
+        changeSign(currentValue);
+        return;
     }
 
     if (id === 'log10') {
-        screen.textContent = Math.log(currentValue)/Math.LN10;
+        calculateLog10(currentValue);
         return;
     }
 
     if (id === 'ln') {
-        screen.textContent = Math.log(currentValue);
+        calculateNaturalLog(currentValue);
         return;
     }
 
     if (id === 'squareroot') {
-        screen.textContent = Math.sqrt(screen.textContent);
+        calculateSquareRoot(currentValue);
         return;
     }
 
     if (id === 'pi') {
-        screen.textContent = Math.PI;
+        calculatePi();
+        return;
     }
 
     if (id === 'equals') {
-        if (currentOperator == '') {
-            return;
-        }
-        screen.textContent = operate(previousScreen.textContent, screen.textContent, currentOperator);
-        currentOperator = '';
-        operatorJustHit = false;
+        screen.textContent = operate(previousValue, currentValue, currentOperator);
         return;
     }
 })
+
+function handleNumber(input, currentValue) {
+    if (!operatorJustHit) {
+        if (currentValue.length < 9) {
+            if (currentValue === '0') {
+                screen.textContent = input;
+                return;
+            } else {
+                screen.textContent += input;
+                return;
+            }
+        } else {
+            return;
+        }
+    } else if (operatorJustHit) {
+        previousScreen.textContent = screen.textContent;
+        screen.textContent = 0;
+        operatorJustHit = false;    
+        screen.textContent = input;
+        return;
+    }
+}
+
+function addDecimal() {
+    if (!(currentValue.includes('.'))) {
+        screen.textContent += '.';
+    }
+}
+
+function clearScreen() {
+    screen.textContent = 0;
+    previousScreen.textContent = 0;
+    operatorJustHit = false;
+    currentOperator = '';
+}
+
+function changeOperator(input, previousValue, currentValue) {
+    if (currentOperator) {
+        screen.textContent  = operate(previousValue, currentValue, currentOperator);
+        currentOperator = input;
+        operatorJustHit = true;
+        return;
+    } else if (!currentOperator) {
+        currentOperator = input;
+        operatorJustHit = true;
+        previousScreen.textContent = currentValue;
+        return;
+    }
+}
+
+function changeSign(currentValue) {
+    if (currentValue === '0') {
+        return;
+    } if (!(currentValue.includes('-'))) {
+        screen.textContent = '-' + screen.textContent;
+        return;
+    } else {
+        screen.textContent = screen.textContent.slice(1);
+        return;
+    }
+}
+
+function deleteCharacter() {
+    screen.textContent = screen.textContent.slice(0, -1);
+    if (screen.textContent == '') {
+        screen.textContent = 0;
+    } if (currentValue[currentValue.length-1] === '.') {
+        screen.textContent = screen.textContent.slice(0, -1);
+    }
+}
+
+function calculateLog10(currentValue) {
+    screen.textContent = Math.log(currentValue)/Math.LN10;
+}
+
+function calculateNaturalLog(currentValue) {
+    screen.textContent = Math.log(currentValue);
+}
+
+function calculateSquareRoot(currentValue) {
+    screen.textContent = Math.sqrt(currentValue);
+}
+
+function calculatePi() {
+    screen.textContent = Math.PI;
+}
 
 function operate(previousValue, currentValue, operator) {
     if (operator === '') {
@@ -131,4 +170,6 @@ function operate(previousValue, currentValue, operator) {
     } if (operator === 'exponent') {
         return parseFloat(previousValue) ** parseFloat(currentValue);
     }
+    currentOperator = '';
+    operatorJustHit = false;
 }
